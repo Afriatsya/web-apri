@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Anita</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #ffeef2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .login, .main, .gallery {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      margin: 1rem;
+    }
+    input {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background-color: #ff3f6e;
+    }
+    .hidden {
+      display: none;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .sections {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .section {
+      background-color: #fff0f5;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    @media (max-width: 500px) {
+      .login, .main, .gallery {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login" id="loginPage">
+    <h2>Login Dulu</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Masuk</button>
+  </div>
+
+  <div class="main hidden" id="mainPage">
+    <img src="assets/WhatsApp Image 2025-05-08 at 21.13.17_3f1c09c9.jpg" alt="Foto Anita" />
+    <h2 style="color:#d6336c; margin-bottom: 1rem;">Saya sayangki 💖</h2>
+    <button onclick="tampilkanPesan()">Klik Disini</button>
+
+    <div class="sections hidden" id="pesanSections">
+      <div class="section">
+        <h3>Cinta yang Tulus</h3>
+        <p>Sejak mengenalmu, hatiku tahu bahwa kamu adalah satu-satunya. Setiap senyummu, adalah cahaya untuk hariku.</p>
+      </div>
+      <div class="section">
+        <h3>Setiap Detik Berarti</h3>
+        <p>Aku ingin setiap detik bersamamu. Tak ada hal lain yang membuatku lebih bahagia dari melihatmu tersenyum.</p>
+      </div>
+      <div class="section">
+        <h3>Selamanya Bersamamu</h3>
+        <p>Jika ada satu hal yang ingin kuperjuangkan setiap hari, itu adalah cintamu. Kamu adalah rumah bagi hatiku.</p>
+      </div>
+      <button onclick="tampilkanGaleri()">Klik Lagi Lahh</button>
+    </div>
+  </div>
+
+  <div class="gallery hidden" id="galleryPage">
+    <h2>Aprianita Nur Hikmah 📸</h2>
+    <div class="gallery-grid">
+      <img src="assets/WhatsApp Image 2025-05-08 at 21.13.17_7af93503.jpg" alt="Anita 1">
+      <img src="assets/WhatsApp Image 2025-05-08 at 21.13.18_a6baabf6.jpg" alt="Anita 2">
+      <img src="assets/WhatsApp Image 2025-05-08 at 21.13.18_f657268a.jpg" alt="Anita 3">
+      <img src="assets/WhatsApp Image 2025-05-08 at 21.13.16_39a767f7.jpg" alt="Anita 4">
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if (user === 'aprianita' && pass === '04142004') {
+        document.getElementById('loginPage').classList.add('hidden');
+        document.getElementById('mainPage').classList.remove('hidden');
+      } else {
+        alert('Username atau password salah!');
+      }
+    }
+
+    function tampilkanPesan() {
+      document.getElementById('pesanSections').classList.remove('hidden');
+    }
+
+    function tampilkanGaleri() {
+      document.getElementById('mainPage').classList.add('hidden');
+      document.getElementById('galleryPage').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
